@@ -1,6 +1,5 @@
 import React from "react";
 import {Box, Button, Typography} from "@mui/material";
-// @ts-ignore
 import logo from '../../resources/images/newgradeu_logo.jpg';
 import LoginForm from "../forms/LoginForm";
 

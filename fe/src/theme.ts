@@ -8,15 +8,15 @@ export const lightTheme: Theme = createTheme({
       main: '#8083FF',
     },
     secondary: {
-      main: '#f50057',
+      main: '#F5F5F5',
     },
     text: {
       primary: '#8083FF',
-      secondary: '#ACB7C0'
+      secondary: '#8293a0',
     },
     background: {
-      default: '#F5F5F5',
-      paper: '#FFF'
+      default: '#F0F0F0',
+      paper: '#FFF',
     },
     typography: {
       button: {
@@ -46,7 +46,7 @@ export const darkTheme: Theme = createTheme({
       main: '#8083FF',
     },
     secondary: {
-      main: '#f50057',
+      main: '#F5F5F5',
     },
     text: {
       primary: '#8083FF',

@@ -1,7 +1,5 @@
 import React, {useState} from "react";
-import {Box} from "@mui/material";
 import ReactCardFlip from "react-card-flip";
-import LoginForm from "../forms/LoginForm";
 import RegisterCard from "./RegisterCard";
 import LoginCard from "./LoginCard";
 const AuthenticationCard = () => {
