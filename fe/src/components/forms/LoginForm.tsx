@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import {Box, Button, Typography} from "@mui/material";
 import AuthTextField from "../inputs/AuthTextField";
-import google from "../../resources/images/google.png";
-import facebook from "../../resources/images/facebook.png";
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import SquareIconButton from "../buttons/SquareIconButton";
 
 /**
  * This is the form used for the login screen part of the card. It contains the following items:
@@ -75,40 +76,8 @@ const LoginForm = () => {
             gap: "12px",
             justifyContent: "center",
           }}>
-            <Button id={"google-auth"} sx={{
-              width: "0px",
-              height: "32px",
-              backgroundColor: "#8083FF",
-              boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
-              transition: "background 0.2s ease-in-out",
-              "&:hover": {
-                backgroundColor: "#595BB2",
-              }
-            }}>
-              <img src={google} alt={"Cannot load image"} style={{
-                width: "16px",
-                height: "16px",
-                padding: "0",
-                margin: "0"
-              }}/>
-            </Button>
-            <Button id={"facebook-auth"} sx={{
-              width: "0px",
-              height: "32px",
-              backgroundColor: "#8083FF",
-              boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
-              transition: "background 0.2s ease-in-out",
-              "&:hover": {
-                backgroundColor: "#595BB2",
-              }
-            }}>
-              <img src={facebook} alt={"Cannot load image"} style={{
-                width: "16px",
-                height: "16px",
-                padding: "0",
-                margin: "0"
-              }}/>
-            </Button>
+            <SquareIconButton id={"google-auth"} icon={<GoogleIcon />} onClick={() =>{}} variant={"primary"} />
+            <SquareIconButton id={"facebook-auth"} icon={<FacebookIcon />} onClick={() =>{}} variant={"primary"} />
           </Box>
         </Box>
       </Box>

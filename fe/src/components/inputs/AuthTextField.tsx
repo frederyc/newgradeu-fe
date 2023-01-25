@@ -2,7 +2,7 @@ import React from "react";
 import {TextField} from "@mui/material";
 
 type AuthTextFieldParams = {
-  id: string,
+  id?: string,
   label: string,
   type: string,
   errorMessage: string | null,   // This should be null or empty. If not, the text field will enter 'error mode'

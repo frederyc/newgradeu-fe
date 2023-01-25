@@ -11,7 +11,7 @@ import AuthenticationPasswordTooltip from "../tooltips/AuthenticationPasswordToo
 import CredentialsValidatorService from "../../services/CredentialsValidatorService";
 
 /**
- * This is the register register form, used alongside the job seeker register form. It has the following elements:
+ * This is the register form, used alongside the job seeker register form. It has the following elements:
  * Default Message: (Join NewGrad today and browse tech jobs from top tier tech companies.);
  * Name Field;
  * Company Email Field; (recruiter accounts must use valid company emails)
@@ -33,10 +33,6 @@ const RegisterRecruiterForm = () => {
   const [invalidCompany, setInvalidCompany] = useState<string | null>(null);
   const [invalidPassword, setInvalidPassword] = useState<string | null>(null);
   const [invalidCPassword, setInvalidCPassword] = useState<string | null>(null);
-
-  useEffect(() => {
-
-  }, [company]);
 
   const top100Films = [
     { label: 'The Shawshank Redemption', year: 1994 },

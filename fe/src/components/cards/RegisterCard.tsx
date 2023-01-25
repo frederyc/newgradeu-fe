@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Box, Button, Typography} from "@mui/material";
-// @ts-ignore
 import logo from "../../resources/images/newgradeu_logo.jpg";
 import AuthTabbedNavigator, {TAB_FORM} from "../navigation/AuthTabbedNavigator";
 import RegisterJobSeekerForm from "../forms/RegisterJobSeekerForm";

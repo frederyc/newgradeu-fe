@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Box} from "@mui/material";
 import WindowDimensions from "../../types/interfaces/WindowDimensions";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import AuthenticationCard from "../cards/AuthenticationCard";
-// @ts-ignore
 import background from "../../resources/images/background_companies.jpg";
 
 const BACKGROUND_WIDTH: number = 4972;
@@ -17,7 +16,6 @@ const AuthenticationPage = () => {
       return Math.max(windowDimensions.width, windowDimensions.height) / 4500 + (isMobile ? 0.05 : 0);
   }
 
-  // @ts-ignore
   return (
     <Box id={"authentication-page"} sx={{
       height: "100vh",
