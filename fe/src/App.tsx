@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {ThemeProvider, Theme, CssBaseline} from "@mui/material";
-import {lightTheme, darkTheme} from "./theme";
+import {darkTheme, lightTheme} from "./theme";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import AuthenticationPage from "./components/pages/AuthenticationPage";
-import BrowsePage from "./components/pages/BrowsePage";
+import AuthenticationPage from "./components/pages/structure/AuthenticationPage";
+import BrowsePage from "./components/pages/structure/BrowsePage";
 
 function App() {
   const [theme, setTheme] = useState<Theme>(darkTheme);

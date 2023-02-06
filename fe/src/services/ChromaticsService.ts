@@ -8,19 +8,40 @@ export default class ChromaticsService {
   public static adjustColorLightness(hexColor: string, percentage: number): string {
     // Cut excess percentage
     if (Math.abs(percentage) > 100)
-      percentage = 100 * percentage < 0 ? -1 : 1;
+      percentage = percentage < 0 ? -100 : 100;
 
     // Convert the hex color to RGB
     let r: number = parseInt(hexColor.substring(1, 3), 16);
     let g: number = parseInt(hexColor.substring(3, 5), 16);
     let b: number = parseInt(hexColor.substring(5, 7), 16);
 
-    // Lighten the color by the specified percentage
-    r = Math.round(r + (255 - r) * (percentage / 100));
-    g = Math.round(g + (255 - g) * (percentage / 100));
-    b = Math.round(b + (255 - b) * (percentage / 100));
+    // Lighten/Darken the color by the specified percentage
+    if (percentage < 0) {
+      r = Math.floor(r * (1 - (-percentage) / 100));
+      g = Math.floor(g * (1 - (-percentage) / 100));
+      b = Math.floor(b * (1 - (-percentage) / 100));
+    } else {
+      r = Math.round(r + (255 - r) * (percentage / 100));
+      g = Math.round(g + (255 - g) * (percentage / 100));
+      b = Math.round(b + (255 - b) * (percentage / 100));
+    }
 
     // Convert the RGB color back to hex
     return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+
+  public static getTopLeftPixelColor(image: HTMLImageElement | null): string | null {
+    if (!image) return null;
+    const canvas = document.createElement('canvas');
+    canvas.width = 1;
+    canvas.height = 1;
+
+    const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
+    if (!ctx) throw new Error('Canvas 2D context not available');
+
+    ctx.drawImage(image, 0, 0, 1, 1, 0, 0, 1, 1);
+    const pixel: Uint8ClampedArray = ctx.getImageData(0, 0, 1, 1).data;
+
+    return `#${pixel[0].toString(16).padStart(2, '0')}${pixel[1].toString(16).padStart(2, '0')}${pixel[2].toString(16).padStart(2, '0')}`;
   }
 }
